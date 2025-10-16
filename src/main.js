@@ -1,7 +1,14 @@
-// Debug info (remove in production)
-if (import.meta.env.DEV) {
-    console.log('🚀 Skyline News - Development Mode');
-}
+// Import CSS
+import './style.css';
+
+// Debug info
+console.log('🚀 Skyline News Loading...');
+console.log('Environment:', import.meta.env.MODE);
+console.log('Base URL:', import.meta.env.BASE_URL);
+console.log('Current URL:', window.location.href);
+
+// Verify DOM is ready
+console.log('DOM State:', document.readyState);
 
 // NY Times API Integration
 const API_KEY = 'eQXmmahM2v1pEMNk25PtkDDniEGgy41q';
