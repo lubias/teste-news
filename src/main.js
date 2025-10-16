@@ -1,55 +1,6 @@
-// Import CSS
-import './main.css';
+// CSS is now inline in HTML - no import needed
 
-// CSS Fallback - Force CSS loading if not working
-function ensureCSSLoaded() {
-    console.log('🎨 Checking CSS loading...');
-    
-    // Check if CSS has loaded by testing a known style
-    const testElement = document.querySelector('.header');
-    if (testElement) {
-        const computedStyle = window.getComputedStyle(testElement);
-        const hasStyles = computedStyle.background !== 'rgba(0, 0, 0, 0)' && 
-                         computedStyle.background !== 'transparent' &&
-                         computedStyle.background !== '';
-        
-        if (!hasStyles) {
-            console.warn('⚠️ CSS not loaded, applying fallback...');
-            applyFallbackCSS();
-        } else {
-            console.log('✅ CSS loaded successfully');
-        }
-    }
-}
-
-function applyFallbackCSS() {
-    // Create and inject critical CSS if main CSS fails
-    const style = document.createElement('style');
-    style.textContent = `
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Inter, system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
-        .header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 2rem 0; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
-        .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .logo p { color: #6b7280; font-size: 0.9rem; margin-top: 0.25rem; }
-        .search-btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
-        .nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-        .nav-list { display: flex; list-style: none; gap: 0.5rem; padding: 1.25rem 0; justify-content: center; }
-        .nav-link { text-decoration: none; color: #6b7280; font-weight: 500; padding: 0.75rem 1.5rem; border-radius: 12px; transition: all 0.3s ease; }
-        .nav-link.active { color: white; background: linear-gradient(135deg, #667eea, #764ba2); }
-        .main { padding: 3rem 0; min-height: 70vh; }
-        .main-layout { display: grid; grid-template-columns: 1fr 350px; gap: 3rem; align-items: start; }
-        .loading { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 0; color: #6b7280; }
-        .weather-widget { background: rgba(255, 255, 255, 0.95); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
-        .weather-header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1.5rem; text-align: center; }
-        .weather-content { padding: 2rem; }
-        .footer { background: linear-gradient(135deg, #1e293b, #334155); color: white; text-align: center; padding: 3rem 0; }
-        @media (max-width: 768px) { .main-layout { grid-template-columns: 1fr; gap: 2rem; } .weather-sidebar { order: -1; } }
-    `;
-    document.head.appendChild(style);
-    console.log('🎨 Fallback CSS applied');
-}
+// CSS is now inline - no fallback needed
 
 // Debug info
 console.log('🚀 Skyline News Loading...');
@@ -449,11 +400,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load initial news and weather
     loadNews('mostViewed');
     loadWeather();
-    
-    // Check CSS loading after a short delay
-    setTimeout(() => {
-        ensureCSSLoaded();
-    }, 500);
 });
 
 // Make functions globally available for retry buttons
