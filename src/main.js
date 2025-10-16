@@ -1,5 +1,5 @@
 // Import CSS
-import './style.css';
+import './main.css';
 
 // Debug info
 console.log('🚀 Skyline News Loading...');
