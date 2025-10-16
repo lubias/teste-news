@@ -5,20 +5,20 @@ export default defineConfig({
   base: '/teste-news/',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
+    assetsDir: '',  // Assets na raiz do dist
     sourcemap: false,
+    cssCodeSplit: false,  // CSS em um único arquivo
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        assetFileNames: '[name].[ext]',  // Nomes simples
+        chunkFileNames: '[name].js',
+        entryFileNames: '[name].js'
       }
     }
   },
   server: {
     port: 5173,
     host: true
-  },
-  // Garantir que CSS seja processado corretamente
-  css: {
-    preprocessorOptions: {}
   }
 })
