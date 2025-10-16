@@ -1,4 +1,7 @@
-import './style.css'
+// Debug info (remove in production)
+if (import.meta.env.DEV) {
+    console.log('🚀 Skyline News - Development Mode');
+}
 
 // NY Times API Integration
 const API_KEY = 'eQXmmahM2v1pEMNk25PtkDDniEGgy41q';
