@@ -35,11 +35,14 @@ npm run dev
 
 ## 🌐 Deploy para GitHub Pages
 
-### Método Único: Deploy Automático com GitHub Actions
+### Passo a Passo Completo:
 
-1. **Configure o GitHub Pages**:
+1. **PRIMEIRO - Habilite o GitHub Pages**:
    - Vá em `Settings > Pages`
-   - Source: `GitHub Actions`
+   - **Source**: Selecione `Deploy from a branch`
+   - **Branch**: Selecione `gh-pages` (será criada automaticamente)
+   - **Folder**: `/ (root)`
+   - Clique em `Save`
 
 2. **Push para o repositório**:
    ```bash
@@ -48,10 +51,13 @@ npm run dev
    git push origin main
    ```
 
-3. **O deploy automático será executado** através do GitHub Actions
+3. **O deploy automático será executado**:
+   - ✅ GitHub Actions criará a branch `gh-pages`
    - ✅ Build automático
-   - ✅ Deploy automático
-   - ✅ Permissões configuradas
+   - ✅ Deploy automático para GitHub Pages
+
+4. **Acesse o site**:
+   - URL: `https://lubias.github.io/teste-news/`
 
 ### Teste Local
 
