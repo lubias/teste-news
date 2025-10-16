@@ -1,7 +1,6 @@
 console.log('🚀 Skyline News - Debug Info');
-console.log('Base URL:', import.meta.env.BASE_URL);
-console.log('Mode:', import.meta.env.MODE);
 console.log('Window location:', window.location.href);
+console.log('User agent:', navigator.userAgent);
 
 // Test API call
 setTimeout(() => {

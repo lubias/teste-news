@@ -5,9 +5,14 @@
 // Debug info
 console.log('🚀 Skyline News Loading...');
 console.log('Current URL:', window.location.href);
+console.log('User Agent:', navigator.userAgent);
 
 // Verify DOM is ready
 console.log('DOM State:', document.readyState);
+
+// Test API availability
+console.log('Testing NY Times API connection...');
+console.log('API Key present:', API_KEY ? 'Yes' : 'No');
 
 // NY Times API Integration
 const API_KEY = 'eQXmmahM2v1pEMNk25PtkDDniEGgy41q';
