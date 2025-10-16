@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline News - Breaking News & Updates</title>
+    <meta name="description"
+      content="Stay informed with the latest breaking news, top stories, and trending articles from around the world.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <h1>Skyline News</h1>
+              <p>Your Global News Destination</p>
+            </div>
+            <button id="searchBtn" class="search-btn" aria-label="Open search">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Search Stories
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Navigation -->
+      <nav class="nav">
+        <div class="container">
+          <ul class="nav-list" role="tablist">
+            <li><a href="#" class="nav-link active" data-category="mostViewed"
+                role="tab">📊 Most Viewed</a></li>
+            <li><a href="#" class="nav-link" data-category="mostShared"
+                role="tab">🔄 Most Shared</a></li>
+            <li><a href="#" class="nav-link" data-category="search"
+                role="tab">🔥 Top Stories</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="container">
+          <div class="main-layout">
+            <!-- Content Area -->
+            <div class="content-area">
+              <!-- Loading State -->
+              <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading news...</p>
+              </div>
+
+              <!-- News Grid -->
+              <div id="newsGrid" class="news-grid">
+                <!-- News cards will be inserted here -->
+              </div>
+            </div>
+
+            <!-- Weather Sidebar -->
+            <aside class="weather-sidebar">
+              <div class="weather-widget">
+                <div class="weather-header">
+                  <h3>🌤️ New York Weather</h3>
+                </div>
+                <div id="weatherContent" class="weather-content">
+                  <div class="weather-loading">
+                    <div class="mini-spinner"></div>
+                    <p>Loading weather...</p>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <p>&copy; 2025 Skyline News</p>
+          <p>Powered by The New York Times API and
+            OpenWeatherMap API</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="search-modal">
+      <div class="search-modal-content">
+        <div class="search-modal-header">
+          <h2>🔍 Search News</h2>
+          <button id="closeSearchBtn" class="close-btn"
+            aria-label="Close search">&times;</button>
+        </div>
+        <div class="search-modal-body">
+          <input type="text" id="searchInput"
+            placeholder="Search for news, topics, or keywords..."
+            class="search-input" autocomplete="off">
+          <button id="performSearch" class="search-submit-btn">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
