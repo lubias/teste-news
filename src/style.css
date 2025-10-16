@@ -592,7 +592,6 @@ body {
 /* For cards without images, add more padding */
 .news-card:not(:has(.news-image)) .news-content {
   padding: 2.5rem 2rem;
-}
   flex: 1;
   display: flex;
   flex-direction: column;

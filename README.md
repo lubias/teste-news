@@ -35,13 +35,11 @@ npm run dev
 
 ## 🌐 Deploy para GitHub Pages
 
-### Método 1: Deploy Automático (Recomendado)
+### Método Único: Deploy Automático com GitHub Actions
 
-1. **Configure o repositório**:
+1. **Configure o GitHub Pages**:
    - Vá em `Settings > Pages`
-   - Source: `Deploy from a branch`
-   - Branch: `gh-pages`
-   - Folder: `/ (root)`
+   - Source: `GitHub Actions`
 
 2. **Push para o repositório**:
    ```bash
@@ -51,22 +49,25 @@ npm run dev
    ```
 
 3. **O deploy automático será executado** através do GitHub Actions
+   - ✅ Build automático
+   - ✅ Deploy automático
+   - ✅ Permissões configuradas
 
-### Método 2: Deploy Manual
+### Teste Local
 
 ```bash
 # Build do projeto
 npm run build
 
-# Deploy manual (se tiver gh-pages instalado)
-npm run deploy
+# Teste local do build
+npm run preview
 ```
 
 ## ⚙️ Configuração
 
 ### Vite Config
 O projeto está configurado para GitHub Pages com:
-- **Base URL**: `/Projeto_3/` (ajuste para o nome do seu repositório)
+- **Base URL**: `/teste-news/` (nome do repositório)
 - **Build Output**: `dist/`
 - **Assets**: `assets/`
 
@@ -110,5 +111,5 @@ Projeto_3/
 
 ---
 
-💡 **Desenvolvido por**: [Seu Nome]  
-🔗 **Demo**: https://seu-usuario.github.io/Projeto_3/
+💡 **Desenvolvido por**: Ben-hur  
+🔗 **Demo**: https://lubias.github.io/teste-news/
